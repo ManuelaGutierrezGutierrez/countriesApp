@@ -1,0 +1,51 @@
+<h2>Por país</h2>
+<hr>
+
+<div class="row">
+  <div class="col">
+    <form (ngSubmit)="search()" autocomplete="off">
+      <input type="text"
+             name="term"
+             class="form-control"
+             [(ngModel)]="term"
+             placeholder="Buscar país..."/>
+    </form>
+  </div>
+</div>
+
+<hr>
+
+<div *ngIf="isError"
+     class="alert alert-danger">
+  No se encontró nada con {{term}}
+</div>
+
+<div *ngIf="!isError" class="row">
+  <div class="col">
+
+    <table class="table table-hover">
+
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Bandera</th>
+          <th>Nombre</th>
+          <th>Población</th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Bandera</td>
+          <td>Nombre</td>
+          <td>123</td>
+          <td><a href="#">Ver...</a></td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
